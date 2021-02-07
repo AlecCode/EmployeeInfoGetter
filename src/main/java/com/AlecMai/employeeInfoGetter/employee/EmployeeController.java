@@ -20,7 +20,17 @@ public class EmployeeController {
     }
 
     @GetMapping("api/v1/employee/{id}")
-    public Employee getEmployee(@PathVariable Long id) {
-        return employeeService.getEmployee(id);
+    public Employee getEmployeeID(@PathVariable Long id) {
+        return employeeService.getEmployeeById(id);
+    }
+
+    @GetMapping("api/v1/employee_first_name/{firstName}")
+    public Employee getEmployeeFirstName(@PathVariable String firstName) {
+        return employeeService.getEmployeeByFirstName(firstName);
+    }
+
+    @GetMapping("api/v1/employee_last_name/{lastName}")
+    public Employee getEmployeeLastName(@PathVariable String lastName) {
+        return employeeService.getEmployeeByLastName(lastName);
     }
 }
