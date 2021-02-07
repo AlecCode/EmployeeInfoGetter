@@ -18,19 +18,19 @@ Instructions:
     - Commands:
       - employees
         ![localhost:8080/api/v1/employees]
-        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example Images/employees.png)
+        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/employees.png)
       - employee/{id}
         ![localhost:8080/api/v1/employee/1]
-        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example Images/employee:[id].png)
+        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/employee:%5Bid%5D.png)
       - employee_first_name/{first name}
         ![localhost:8080/api/v1/employee_first_name/foo]
-        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example Images/employee_first_name:[first name].png)
+        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/employee_first_name:%5Bfirst%20name%5D.png)
       - employee_last_name/{last name}
         ![localhost:8080/api/v1/employee_last_name/foo]
-        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example Images/employee_last_name:[last name].png)
+        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/employee_last_name:%5Blast%20name%5D.png)
       - employee_address/{address}
         ![localhost:8080/api/v1/employee_address/333 Street St]
-        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example Images/employee_address:[address].png)
+        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/employee_address:%5Baddress%5D.png)
       - employee_phone/{phone number}
         ![localhost:8080/api/v1/employee_phone/5555555555]
-        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example Images/employee_phone:[phone number].png)
+        (https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/employee_phone:%5Bphone%20number%5D.png)
