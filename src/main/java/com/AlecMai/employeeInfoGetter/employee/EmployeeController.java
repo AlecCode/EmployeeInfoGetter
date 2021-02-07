@@ -1,14 +1,11 @@
 package com.AlecMai.employeeInfoGetter.employee;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/employee")
 public class EmployeeController {
     private final EmployeeService employeeService;
 
@@ -17,8 +14,13 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping
-    public List<Employee> getStudents() {
-        return employeeService.getStudents();
+    @GetMapping("api/v1/employees")
+    public List<Employee> getEmployees() {
+        return employeeService.getEmployees();
+    }
+
+    @GetMapping("api/v1/employee/{id}")
+    public Employee getEmployee(@PathVariable Long id) {
+        return employeeService.getEmployee(id);
     }
 }

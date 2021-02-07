@@ -14,7 +14,11 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public List<Employee> getStudents() {
+    public List<Employee> getEmployees() {
         return employeeRepository.findAll();
+    }
+
+    public Employee getEmployee(Long id) {
+        return employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 }

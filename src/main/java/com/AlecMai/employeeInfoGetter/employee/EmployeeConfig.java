@@ -28,8 +28,3 @@ public class EmployeeConfig {
         };
     }
 }
-
-/*
-new Employee(1L, "Foo", "Bar", "123 Street St", 1234567890),
-                new Employee(2L, "Bar", "Foo", "124 Street St", 1234567891)
-* */
