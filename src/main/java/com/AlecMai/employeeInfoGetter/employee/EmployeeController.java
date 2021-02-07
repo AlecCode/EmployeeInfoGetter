@@ -33,4 +33,14 @@ public class EmployeeController {
     public Employee getEmployeeLastName(@PathVariable String lastName) {
         return employeeService.getEmployeeByLastName(lastName);
     }
+
+    @GetMapping("api/v1/employee_address/{address}")
+    public Employee getEmployeeAddress(@PathVariable String address) {
+        return employeeService.getEmployeeByAddress(address);
+    }
+
+    @GetMapping("api/v1/employee_phone/{phone}")
+    public Employee getEmployeePhone(@PathVariable Long phone) {
+        return employeeService.getEmployeeByPhone(phone);
+    }
 }

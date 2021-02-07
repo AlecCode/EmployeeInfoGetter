@@ -42,4 +42,24 @@ public class EmployeeService {
 
         throw new EmployeeNotFoundException(lastName);
     }
+
+    public Employee getEmployeeByAddress(String address) {
+        for (Employee e : employeeRepository.findAll()) {
+            if (e.getAddress().equalsIgnoreCase(address)) {
+                return e;
+            }
+        }
+
+        throw new EmployeeNotFoundException(address);
+    }
+
+    public Employee getEmployeeByPhone(Long phone) {
+        for (Employee e : employeeRepository.findAll()) {
+            if (e.getPhone().equals(phone)) {
+                return e;
+            }
+        }
+
+        throw new EmployeeNotFoundException(phone);
+    }
 }
