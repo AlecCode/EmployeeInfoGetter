@@ -15,16 +15,40 @@ public class EmployeeConfig {
             Employee foo = new Employee(
                     "Foo",
                     "Bar",
-                    "123 Street St",
-                    1234567890);
+                    "111 Street St",
+                    1111111111L);
 
             Employee bar = new Employee(
                     "Bar",
                     "Foo",
-                    "124 Street St",
-                    1234567891);
+                    "222 Street St",
+                    2222222222L);
 
-            repository.saveAll(List.of(foo, bar));
+            Employee pete = new Employee(
+                    "Pete",
+                    "Pette",
+                    "333 Street St",
+                    3333333333L);
+
+            Employee derrick = new Employee(
+                    "Derrick",
+                    "Derrickson",
+                    "444 Street St",
+                    4444444444L);
+
+            Employee tim = new Employee(
+                    "Tim",
+                    "Timmothy",
+                    "555 Street St",
+                    5555555555L);
+
+            Employee jim = new Employee(
+                    "Jim",
+                    "Jimmothy",
+                    "777 Street St",
+                    7777777777L);
+
+            repository.saveAll(List.of(foo, bar, pete, derrick, tim, jim));
         };
     }
 }

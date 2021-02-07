@@ -19,9 +19,9 @@ public class Employee {
     private String first_name;
     private String last_name;
     private String address;
-    private int phone;
+    private Long phone;
 
-    public Employee(long id, String first_name, String last_name, String address, int phone) {
+    public Employee(long id, String first_name, String last_name, String address, Long phone) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -29,7 +29,7 @@ public class Employee {
         this.phone = phone;
     }
 
-    public Employee(String first_name, String last_name, String address, int phone) {
+    public Employee(String first_name, String last_name, String address, Long phone) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.address = address;
@@ -55,7 +55,7 @@ public class Employee {
         return address;
     }
 
-    public int getPhone() {
+    public Long getPhone() {
         return phone;
     }
 
@@ -75,7 +75,7 @@ public class Employee {
         this.address = address;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 
