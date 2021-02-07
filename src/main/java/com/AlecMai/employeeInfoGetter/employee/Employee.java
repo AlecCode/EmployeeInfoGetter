@@ -1,6 +1,20 @@
 package com.AlecMai.employeeInfoGetter.employee;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Employee {
+    @Id
+    @SequenceGenerator(
+            name = "employee_sequence",
+            sequenceName = "employee_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "employee_sequence"
+    )
     private long id;
     private String first_name;
     private String last_name;
@@ -13,6 +27,16 @@ public class Employee {
         this.last_name = last_name;
         this.address = address;
         this.phone = phone;
+    }
+
+    public Employee(String first_name, String last_name, String address, int phone) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.address = address;
+        this.phone = phone;
+    }
+
+    public Employee() {
     }
 
     public long getId() {
