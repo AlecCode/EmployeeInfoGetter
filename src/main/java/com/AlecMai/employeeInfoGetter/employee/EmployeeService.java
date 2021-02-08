@@ -1,6 +1,5 @@
 package com.AlecMai.employeeInfoGetter.employee;
 
-import com.AlecMai.employeeInfoGetter.EmployeeInfoGetterApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,13 +1,70 @@
 package com.AlecMai.employeeInfoGetter;
 
 import org.junit.jupiter.api.Test;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.web.server.LocalServerPort;
 
-@SpringBootTest
-class EmployeeInfoGetterApplicationTests {
+import static org.assertj.core.api.Assertions.assertThat;
 
-	@Test
-	void contextLoads() {
-	}
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+public class EmployeeInfoGetterApplicationTests {
 
+    @LocalServerPort
+    private int port;
+
+    @Autowired
+    private TestRestTemplate restTemplate;
+
+    @Test //Sanity check
+    public void contextLoads() {}
+
+    @Test
+    public void employeesTest() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/v1/employees",
+                String.class)).contains("111 Street St");
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/v1/employees",
+                String.class)).contains("222 Street St");
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/v1/employees",
+                String.class)).contains("333 Street St");
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/v1/employees",
+                String.class)).contains("444 Street St");
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/v1/employees",
+                String.class)).contains("555 Street St");
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/v1/employees",
+                String.class)).contains("777 Street St");
+    }
+
+    @Test
+    public void employeeGetByIdTest() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/v1/employee/5",
+                String.class)).contains("555 Street St");
+    }
+
+    @Test
+    public void employeeGetByFirstNameTest() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/v1/employee_first_name/foo",
+                String.class)).contains("111 Street St");
+    }
+
+    @Test
+    public void employeeGetByLastNameTest() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/v1/employee_last_name/foo",
+                String.class)).contains("222 Street St");
+    }
+
+    @Test
+    public void employeeGetByAddress() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/v1/employee_address/777 Street St",
+                String.class)).contains("777 Street St");
+    }
+
+    @Test
+    public void employeeGetByPhone() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/v1/employee_phone/4444444444",
+                String.class)).contains("444 Street St");
+    }
 }
