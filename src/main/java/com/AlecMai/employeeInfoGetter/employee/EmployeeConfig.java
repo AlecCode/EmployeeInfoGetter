@@ -18,6 +18,12 @@ public class EmployeeConfig {
                     "111 Street St",
                     1111111111L);
 
+            Employee foof = new Employee(
+                    "Foo",
+                    "B4r",
+                    "111 Street St",
+                    1110001100L);
+
             Employee bar = new Employee(
                     "Bar",
                     "Foo",
@@ -48,7 +54,7 @@ public class EmployeeConfig {
                     "777 Street St",
                     7777777777L);
 
-            repository.saveAll(List.of(foo, bar, pete, derrick, tim, jim));
+            repository.saveAll(List.of(foo, foof, bar, pete, derrick, tim, jim));
         };
     }
 }

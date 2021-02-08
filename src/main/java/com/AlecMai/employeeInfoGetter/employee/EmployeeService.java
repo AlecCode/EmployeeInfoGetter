@@ -22,43 +22,19 @@ public class EmployeeService {
         return employeeRepository.findById(id).orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 
-    public Employee getEmployeeByFirstName(String firstName) {
-        for (Employee e : employeeRepository.findAll()) {
-            if (e.getFirst_name().equalsIgnoreCase(firstName)) {
-                return e;
-            }
-        }
-
-        throw new EmployeeNotFoundException(firstName);
+    public List<Employee> getEmployeeByFirstName(String firstName) {
+        return employeeRepository.findByFirstName(firstName);
     }
 
-    public Employee getEmployeeByLastName(String lastName) {
-        for (Employee e : employeeRepository.findAll()) {
-            if (e.getLast_name().equalsIgnoreCase(lastName)) {
-                return e;
-            }
-        }
-
-        throw new EmployeeNotFoundException(lastName);
+    public List<Employee> getEmployeeByLastName(String lastName) {
+        return employeeRepository.findByLastName(lastName);
     }
 
-    public Employee getEmployeeByAddress(String address) {
-        for (Employee e : employeeRepository.findAll()) {
-            if (e.getAddress().equalsIgnoreCase(address)) {
-                return e;
-            }
-        }
-
-        throw new EmployeeNotFoundException(address);
+    public List<Employee> getEmployeeByAddress(String address) {
+        return employeeRepository.findByAddress(address);
     }
 
-    public Employee getEmployeeByPhone(Long phone) {
-        for (Employee e : employeeRepository.findAll()) {
-            if (e.getPhone().equals(phone)) {
-                return e;
-            }
-        }
-
-        throw new EmployeeNotFoundException(phone);
+    public List<Employee> getEmployeeByPhone(Long phone) {
+        return employeeRepository.findByPhone(phone);
     }
 }

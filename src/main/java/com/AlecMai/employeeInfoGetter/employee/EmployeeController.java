@@ -24,23 +24,23 @@ public class EmployeeController {
         return employeeService.getEmployeeById(id);
     }
 
-    @GetMapping("api/v1/employee_first_name/{firstName}")
-    public Employee getEmployeeFirstName(@PathVariable String firstName) {
+    @GetMapping("api/v1/employee/first_name/{firstName}")
+    public List<Employee> getEmployeeFirstName(@PathVariable String firstName) {
         return employeeService.getEmployeeByFirstName(firstName);
     }
 
-    @GetMapping("api/v1/employee_last_name/{lastName}")
-    public Employee getEmployeeLastName(@PathVariable String lastName) {
+    @GetMapping("api/v1/employee/last_name/{lastName}")
+    public List<Employee> getEmployeeLastName(@PathVariable String lastName) {
         return employeeService.getEmployeeByLastName(lastName);
     }
 
-    @GetMapping("api/v1/employee_address/{address}")
-    public Employee getEmployeeAddress(@PathVariable String address) {
+    @GetMapping("api/v1/employee/address/{address}")
+    public List<Employee> getEmployeeAddress(@PathVariable String address) {
         return employeeService.getEmployeeByAddress(address);
     }
 
-    @GetMapping("api/v1/employee_phone/{phone}")
-    public Employee getEmployeePhone(@PathVariable Long phone) {
+    @GetMapping("api/v1/employee/phone/{phone}")
+    public List<Employee> getEmployeePhone(@PathVariable Long phone) {
         return employeeService.getEmployeeByPhone(phone);
     }
 }
