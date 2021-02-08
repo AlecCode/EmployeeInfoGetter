@@ -1,9 +1,9 @@
 # EmployeeInfoGetter
 
-Before Running:
-- Install postgres
+Setup:
+- Install postgres, if postgres is not already installed
   - Run: brew -install postgres
-- Install Intellij
+- Install Intellij, if Intellij is not already installed
   - Install community edition from https://www.jetbrains.com/idea/
     
 Instructions:
