@@ -37,4 +37,18 @@ public class EmployeeService {
     public List<Employee> getEmployeeByPhone(Long phone) {
         return employeeRepository.findByPhone(phone);
     }
+
+    public void addNewEmployee(Employee employee) {
+        List<Employee> byFirstName  = employeeRepository.findByFirstName(employee.getFirst_name());
+        List<Employee> byLastName   = employeeRepository.findByLastName(employee.getLast_name());
+        List<Employee> byAddress    = employeeRepository.findByAddress(employee.getAddress());
+        List<Employee> byPhone      = employeeRepository.findByPhone(employee.getPhone());
+
+        if (byFirstName.size() != 0 || byLastName.size() != 0 || byAddress.size() != 0 || byPhone.size() != 0) {
+            throw new IllegalStateException("Some information entered already exists under another employee.");
+        }
+
+        employeeRepository.save(employee);
+        //System.out.println(employee.toString());
+    }
 }
