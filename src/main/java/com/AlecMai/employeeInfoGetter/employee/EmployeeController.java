@@ -43,4 +43,10 @@ public class EmployeeController {
     public List<Employee> getEmployeePhone(@PathVariable Long phone) {
         return employeeService.getEmployeeByPhone(phone);
     }
+
+    //Add new employee
+    @PostMapping(path = "api/v1/add_employee", consumes = "application/json", produces = "application/json")
+    public void registerNewEmployee(@RequestBody Employee employee) {
+        employeeService.addNewEmployee(employee);
+    }
 }
