@@ -43,6 +43,8 @@ Instructions:
 - To add new employees:
     - Open an application to send REST requests
         - This example will use Postman
+        
+        ![Postman Logo](https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/Postman_Logo.png?raw=true)
     - Select the POST request option
     - Enter localhost:8080/api/v1/add_employee in the request field
     - Navigate to the request body
@@ -54,4 +56,7 @@ Instructions:
       - "address": {Address},
       - "phone": {Phone Number}
       - }
+    - Should look something like this:
+    
+    ![Add Employee Example](https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/add_employee.png?raw=true)
     
