@@ -49,4 +49,10 @@ public class EmployeeController {
     public void registerNewEmployee(@RequestBody Employee employee) {
         employeeService.addNewEmployee(employee);
     }
+
+    //Remove employee by ID
+    @DeleteMapping(path = "api/v1/remove_employee/{id}")
+    public void removeEmployeeByID(@PathVariable Long id) {
+        employeeService.removeEmployee(id);
+    }
 }
