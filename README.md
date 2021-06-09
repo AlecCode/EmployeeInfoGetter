@@ -15,7 +15,7 @@ Instructions:
 - Run EmployeeInfoGetterApplication in Intellij
 - Open a web browser (Firefox, Chrome, etc.)
 - Enter into browser URL: localhost:8080/api/v1/{command}
-    - Commands (Very case-sensitive):
+    - Access Commands (Very case-sensitive):
       - employees
       
       ![localhost:8080/api/v1/employees](https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/employees.png?raw=true)
@@ -39,3 +39,19 @@ Instructions:
       - employee/phone/{phone number}
       
       ![localhost:8080/api/v1/employee_phone/5555555555](https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/employee_phone:%5Bphone%20number%5D.png?raw=true)
+      
+- To add new employees:
+    - Open an application to send REST requests
+        - This example will use Postman
+    - Select the POST request option
+    - Enter localhost:8080/api/v1/add_employee in the request field
+    - Navigate to the request body
+    - Select raw JSON
+    - Enter employee information in the form:
+      - {
+      - "first_name": {First Name},
+      - "last_name": {Second Name}, 
+      - "address": {Address},
+      - "phone": {Phone Number}
+      - }
+    
