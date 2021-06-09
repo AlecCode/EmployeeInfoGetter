@@ -59,4 +59,16 @@ Instructions:
     - Should look something like this:
     
     ![Add Employee Example](https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/add_employee.png?raw=true)
+    - Send the request
     
+- To remove an employee:    
+    - Open an application to send REST requests
+        - This example will use Postman
+        
+        ![Postman Logo](https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/Postman_Logo.png?raw=true)
+    - Select the DELETE request option
+    - Enter localhost:8080/api/v1/remove_employee/{id} in the request field
+    - Should look something like this:
+    
+    ![Remove Employee Example](https://github.com/AlecCode/EmployeeInfoGetter/blob/main/Example%20Images/remove_employee.png?raw=true)
+    - Send the request
